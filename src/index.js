@@ -1,6 +1,6 @@
 import React from 'react';
- import ReactDom from 'react-dom';
- class Hello extends React.Component {
+import ReactDom from 'react-dom';
+class Hello extends React.Component {
  	constructor(){
  		super()
  		this.name = 'ALi'
@@ -17,9 +17,9 @@ import React from 'react';
 			</div> 				
  		)
  	}
- }
+}
  
- class TodoList extends React.Component{
+class TodoList extends React.Component{
  	constructor(){
  		super()
  		this.changestatus = this.changestatus.bind(this);
@@ -44,36 +44,36 @@ import React from 'react';
 	 			}
  			]
  		}
- 	}
+	}
 
- 	changestatus(index)
- 	{
- 		console.log(this.state.task[index])
- 	}
- 	render(){
- 		return(
- 				<div>
- 					<TodoItem details={this.state}/>
- 					<ul>
- 						{
- 							this.state.names.map(function(name){
- 								return <TodoItem1 key={name} details={name} /> 								
- 							})
- 						}
- 						<TodoItem1 details={this.state.firstName} /> 						
- 					</ul>
- 					<ul>
- 						{
- 							this.state.task.map((task,index) => {
- 								return <Task key={task.name} index={index} clickHandler={this.changestatus} details={task} />
- 							})
- 						}
- 					</ul>	
- 				</div>
- 		)
- 	}
- }
- class TodoItem extends React.Component{
+	changestatus(index)
+	{
+		console.log(this.state.task[index])
+	}
+	render(){
+		return(
+				<div>
+					<TodoItem details={this.state}/>
+					<ul>
+						{
+							this.state.names.map(function(name){
+								return <TodoItem1 key={name} details={name} /> 								
+							})
+						}
+						<TodoItem1 details={this.state.firstName} /> 						
+					</ul>
+					<ul>
+						{
+							this.state.task.map((task,index) => {
+								return <Task key={task.name} index={index} clickHandler={this.changestatus} details={task} />
+							})
+						}
+					</ul>	
+				</div>
+		)
+	}
+}
+class TodoItem extends React.Component{
  	render(){
  		return(
  			<ul>
@@ -83,15 +83,15 @@ import React from 'react';
 			</ul>
  		)
  	}
- }
- class TodoItem1 extends React.Component{
+}
+class TodoItem1 extends React.Component{
  	render(){
  		return(
  			<li>{this.props.details}</li>		
  		)
  	}
- }
- class Task extends React.Component{
+}
+class Task extends React.Component{
  	render(){
  		return(
  			<li onClick={()=>{
@@ -101,5 +101,5 @@ import React from 'react';
  			</li>
  		)
  	}
- }
- ReactDom.render(<TodoList />,document.getElementById('root'))
+}
+ReactDom.render(<TodoList />,document.getElementById('root'))
